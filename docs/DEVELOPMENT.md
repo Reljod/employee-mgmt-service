@@ -1,6 +1,6 @@
 # Development Guide
 
-### Prerequisites
+## Prerequisites
 1. Install Java 17.
 2. Install Liquibase 4.X.X.
 3. Install Docker and Docker Compose.
@@ -16,7 +16,7 @@
 docker compose up -d db
 ```
 4. Create New Database. *You can use DB Editors to open the server and create new database.*
-```sh
+```sql
 CREATE DATABASE employee_db;
 ```
 5. Update database via template.
