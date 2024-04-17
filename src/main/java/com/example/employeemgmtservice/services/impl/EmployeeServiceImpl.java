@@ -3,6 +3,7 @@ package com.example.employeemgmtservice.services.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.employeemgmtservice.data.CreateEmployeeRequest;
 import com.example.employeemgmtservice.data.CreateEmployeeResponse;
 import com.example.employeemgmtservice.repository.jpa.EmployeeRepository;
 import com.example.employeemgmtservice.repository.model.Employee;
@@ -20,10 +21,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         this.employeeRepository = employeeRepository;
     }
     
-    public CreateEmployeeResponse create() {
+    public CreateEmployeeResponse create(CreateEmployeeRequest request) {
 
         Employee newEmployee = new Employee();
-        newEmployee.setCompanyId(UUID.fromString("b8f92ec7-cc3c-4d6f-8710-95d4b54b2ee1"));
+        newEmployee.setCompanyId(UUID.fromString(request.getCompanyId()));
         newEmployee.setStatus("ACTIVE");
         
         Employee employeeResponse = employeeRepository.save(newEmployee);
